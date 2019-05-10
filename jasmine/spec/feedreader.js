@@ -70,6 +70,7 @@ $(
         const body = document.querySelector("body");
         const menu = document.querySelector(".menu-icon-link");
 
+        // make sure that the class changes between one click and the other
         menu.click();
         expect(body.classList.contains("menu-hidden")).toBe(false);
         menu.click();
@@ -89,6 +90,7 @@ $(
         loadFeed(0, done);
       });
 
+      // End result expects a feed first link to have content
       it("completes work", function() {
         const feed = document.querySelector(".feed");
         expect(feed.children.length > 0).toBe(true);
@@ -115,6 +117,7 @@ $(
         });
       });
 
+      // End result will expect the two contents to be different
       it("content actually changes", function() {
         expect(contentBefore).not.toEqual(contentAfter);
       });
